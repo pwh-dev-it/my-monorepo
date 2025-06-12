@@ -2,13 +2,11 @@
 import Link from 'next/link';
 
 interface BoardDetailPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function BoardDetailPage({ params }: BoardDetailPageProps) {
-  const postId = params.id;
+  const { id: postId } = await params;
   const post = {
     id: postId,
     title: `게시글 ${postId} 제목`,

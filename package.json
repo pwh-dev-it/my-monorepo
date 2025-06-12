@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build:common": "yarn workspaces run build",
+    "mock": "yarn workspace @monorepo/mock-api start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
     "dev:a": "yarn workspace website-a dev",

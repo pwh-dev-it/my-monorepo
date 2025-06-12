@@ -139,11 +139,12 @@ const nextConfig: NextConfig = { // nextConfig 변수에 타입 명시
 export default nextConfig;
 ```
 
-### 4.apps/website-a/tsconfig.json 수정 (extends 및 include 추가)
+### 4.apps/website-a/tsconfig.json 수정 (중요, extends 및 include 추가)
 ```json5
 // apps/website-a/tsconfig.json
+// apps/website-b/tsconfig.json
 {
-  "extends": "../../tsconfig.json", // 루트 tsconfig.json 상속
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -163,12 +164,20 @@ export default nextConfig;
       }
     ],
     "paths": {
-      "@/*": ["./src/*"] // apps/website-a/src 아래에서 절대 경로 사용
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../packages/api/src/**/*.ts", "../../packages/utils/src/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../packages/api/src/**/*.ts",
+    "../../packages/utils/src/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
+
 ```
 ### 5. apps/website-a/src/app/layout.tsx (기본 레이아웃)
 ```typescript jsx
