@@ -123,13 +123,17 @@ yarn add sass
 }
 ```
 
-### 3.apps/website-a/next.config.mjs 수정 (transpilePackages 추가)
-```javascript
-// apps/website-a/next.config.mjs
+### 3.apps/website-a/next.config.ts 수정 (transpilePackages 추가)
+```typescript
+// apps/website-a/next.config.ts
+import type { NextConfig } from 'next'; // NextConfig 타입 임포트
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'standalone',
-  transpilePackages: ['@monorepo/api', '@monorepo/utils'],
+const nextConfig: NextConfig = { // nextConfig 변수에 타입 명시
+    output: 'standalone',
+    // 모노레포의 공통 패키지를 트랜스파일링하도록 설정
+    // Next.js가 node_modules 외부에 있는 코드를 처리할 수 있도록 합니다.
+    transpilePackages: ['@monorepo/api', '@monorepo/utils'],
 };
 
 export default nextConfig;
@@ -185,7 +189,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 }
 ```
 
-### 6. apps/website-a/src/app/globals.scss (해당 웹사이트 전역 SCSS)
+### 6. apps/website-a/src/app/globals.scss 
+#### (자동 생성되는 globals.css 는 삭제)
+#### (자동 생성되는 page.module.css 도 삭제 후 필요 시 scss 파일로 생성)
 ```scss
 /* apps/website-a/src/app/globals.scss */
 body {
@@ -251,4 +257,9 @@ export function Header() {
   text-align: center;
   font-size: 24px;
 }
+```
+
+### 9. my-monorepo-yarn/package.json 수정 (새 웹사이트 추가, 포트 겹치치 않도록)
+```
+"dev:a": "yarn workspace website-a dev -- -p 3001",
 ```
