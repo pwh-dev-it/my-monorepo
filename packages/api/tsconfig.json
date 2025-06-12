@@ -1,0 +1,16 @@
+// packages/api/tsconfig.json
+{
+  "extends": "../../tsconfig.json", // 루트 tsconfig 상속
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true, // 타입 정의 파일 생성
+    "outDir": "dist"     // 컴파일된 JS 및 타입 파일 출력 디렉토리
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

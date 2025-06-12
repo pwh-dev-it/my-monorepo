@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+.pnp/
+.pnp.js
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Next.js
+.next/
+.vercel/
+*.env.local
+.env.local
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+dist/
+
+# Logs
+*.log
+
+# IDEs
+.idea

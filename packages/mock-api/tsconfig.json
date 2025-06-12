@@ -1,0 +1,15 @@
+// packages/mock-api/tsconfig.json
+{
+  "extends": "../../tsconfig.json", // 루트 tsconfig 상속
+  "compilerOptions": {
+    "target": "es2020", // Node.js 버전에 맞춰 타겟 설정 (es2020 이상 권장)
+    "module": "commonjs", // Node.js 환경에서 사용할 모듈 시스템
+    "strict": true,
+    "esModuleInterop": true, // import jsonServer from 'json-server' 가능하게 함
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist" // 컴파일된 JS 파일 출력 디렉토리
+  },
+  "include": ["src/**/*.ts", "index.ts"], // index.ts가 src 폴더 밖에 있다면 직접 명시
+  "exclude": ["node_modules"]
+}

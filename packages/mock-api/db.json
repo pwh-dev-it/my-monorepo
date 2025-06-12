@@ -1,0 +1,14 @@
+{
+  "users": [
+    { "id": "1", "name": "김철수", "email": "chulsoo@example.com" },
+    { "id": "2", "name": "이영희", "email": "younghee@example.com" },
+    { "id": "3", "name": "박민수", "email": "minsu@example.com" },
+    { "id": "4", "name": "최유리", "email": "yuri@example.com" },
+    { "id": "5", "name": "정우진", "email": "woojin@example.com" }
+  ],
+  "products": [
+    { "id": "p1", "name": "게이밍 마우스", "price": 89.99 },
+    { "id": "p2", "name": "기계식 키보드", "price": 129.99 },
+    { "id": "p3", "name": "27인치 모니터", "price": 299.99 }
+  ]
+}

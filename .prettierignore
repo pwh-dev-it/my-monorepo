@@ -1,0 +1,17 @@
+# 빌드 결과물
+dist/
+.next/
+build/
+
+# 캐시 및 로그
+node_modules/
+.yarn/
+.cache/
+*.log
+
+# 기타
+package.json
+package-lock.json
+yarn.lock
+.env
+.env.local

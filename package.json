@@ -1,0 +1,30 @@
+{
+  "name": "my-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pwh-dev-it/my-monorepo.git",
+  "author": "박원호/Wonho Park (HYB_개발파트) <wonho.park@hybecorp.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:common": "yarn workspaces run build",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
+    "dev:a": "yarn workspace website-a dev",
+    "dev:b": "yarn workspace website-b dev -- -p 3001",
+    "dev:c": "yarn workspace website-c dev -- -p 3002",
+    "build:a": "yarn workspace website-a build",
+    "build:b": "yarn workspace website-b build",
+    "build:c": "yarn workspace website-c build"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}

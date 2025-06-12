@@ -1,0 +1,19 @@
+{
+  "name": "@monorepo/mock-api",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch & node dist/index.js"
+  },
+  "dependencies": {
+    "json-server": "1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "@types/json-server": "^0.14.8",
+    "@types/node": "^20.x.x",
+    "typescript": "^5.x.x"
+  }
+}
