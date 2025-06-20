@@ -18,7 +18,7 @@ my-monorepo-yarn/
 │   │   │       └── components/   #   - A 웹사이트 고유의 재사용 컴포넌트 (디자인 A)
 │   │   │           └── Header.tsx
 │   │   │           └── BoardList.tsx
-│   │   ├── next.config.mjs       #   - A 웹사이트의 Next.js 설정
+│   │   ├── next.config.ts       #   - A 웹사이트의 Next.js 설정
 │   │   ├── package.json          #   - A 웹사이트의 의존성 (공통 패키지 참조)
 │   │   └── tsconfig.json         #   - A 웹사이트의 TypeScript 설정
 │   │
@@ -36,7 +36,7 @@ my-monorepo-yarn/
 │   │   │       └── components/   #   - B 웹사이트 고유의 재사용 컴포넌트 (디자인 B)
 │   │   │           └── Navbar.tsx
 │   │   │           └── UserCard.tsx
-│   │   ├── next.config.mjs
+│   │   ├── next.config.ts
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
@@ -51,7 +51,7 @@ my-monorepo-yarn/
 │       │           └── page.tsx
 │       │       └── components/   #   - C 웹사이트 고유의 재사용 컴포넌트 (디자인 C)
 │       │           └── InfoBox.tsx
-│       ├── next.config.mjs
+│       ├── next.config.ts
 │       ├── package.json
 │       └── tsconfig.json
 │
@@ -139,11 +139,12 @@ const nextConfig: NextConfig = { // nextConfig 변수에 타입 명시
 export default nextConfig;
 ```
 
-### 4.apps/website-a/tsconfig.json 수정 (extends 및 include 추가)
+### 4.apps/website-a/tsconfig.json 수정 (중요, extends 및 include 추가)
 ```json5
 // apps/website-a/tsconfig.json
+// apps/website-b/tsconfig.json
 {
-  "extends": "../../tsconfig.json", // 루트 tsconfig.json 상속
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -163,12 +164,20 @@ export default nextConfig;
       }
     ],
     "paths": {
-      "@/*": ["./src/*"] // apps/website-a/src 아래에서 절대 경로 사용
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../packages/api/src/**/*.ts", "../../packages/utils/src/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../packages/api/src/**/*.ts",
+    "../../packages/utils/src/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
+
 ```
 ### 5. apps/website-a/src/app/layout.tsx (기본 레이아웃)
 ```typescript jsx

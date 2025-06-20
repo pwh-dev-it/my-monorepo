@@ -6,14 +6,19 @@
   "author": "박원호/Wonho Park (HYB_개발파트) <wonho.park@hybecorp.com>",
   "license": "MIT",
   "private": true,
+  "type": "module",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
     "build:common": "yarn workspaces run build",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md,json}\"",
+    "mock": "yarn workspace @monorepo/mock-api start",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,json}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,json}\"",
+    "lint": "eslint .",
+    "lint:check": "eslint . --max-warnings 0",
+    "prepare": "husky",
     "dev:a": "yarn workspace website-a dev",
     "dev:b": "yarn workspace website-b dev -- -p 3001",
     "dev:c": "yarn workspace website-c dev -- -p 3002",
@@ -21,7 +26,26 @@
     "build:b": "yarn workspace website-b build",
     "build:c": "yarn workspace website-c build"
   },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --no-cache --no-warn-ignored"
+    ],
+    "*.{js,jsx,ts,tsx,json,css,scss}": [
+      "prettier --check"
+    ]
+  },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^15.3.4",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^16.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
     "prettier": "^3.5.3"
   },
   "dependencies": {

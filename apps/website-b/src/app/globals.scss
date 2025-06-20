@@ -1,0 +1,22 @@
+/* apps/website-b/src/app/globals.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5; /* 웹사이트 B 고유 배경색 */
+  color: #444;
+}
+
+h1,
+h2,
+h3 {
+  color: #e67e22;
+}
+
+a {
+  color: #f39c12;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

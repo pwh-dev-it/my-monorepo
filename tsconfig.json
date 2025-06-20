@@ -3,11 +3,15 @@
   "compilerOptions": {
     "baseUrl": ".", // 경로 별칭의 기준 경로
     "paths": {
-      "@monorepo/api": ["packages/api/src"],       // @monorepo/api 임포트 시 packages/api/src 사용
-      "@monorepo/utils": ["packages/utils/src"]    // @monorepo/utils 임포트 시 packages/utils/src 사용
-    }
+      "@monorepo/api": ["packages/api/src"], // @monorepo/api 임포트 시 packages/api/src 사용
+      "@monorepo/utils": ["packages/utils/src"] // @monorepo/utils 임포트 시 packages/utils/src 사용
+    },
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
-  "references": [ // TypeScript가 워크스페이스 간 의존성을 이해하도록 돕습니다.
+  "references": [
+    // TypeScript가 워크스페이스 간 의존성을 이해하도록 돕습니다.
     { "path": "./packages/api" },
     { "path": "./packages/utils" },
     { "path": "./apps/website-a" },
