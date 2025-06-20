@@ -6,5 +6,9 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.80.10",
+    "axios": "^1.10.0"
   }
 }
