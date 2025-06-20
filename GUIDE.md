@@ -1,8 +1,16 @@
 # 개발 가이드
 
 - 사용하시는 개발툴(IDE) 의 prettier 설정을 활성화 해주세요
-  - 저장 시 자동으로 정렬 권장
-- 사
+  - __저장 시 자동으로 정렬 권장__
+- ESLint 설정을 활성화(수동옵션) 해주세요
+  - eslint package: `~/my-monorepo/node_modules/eslint`
+  - eslint file: `~/my-monorepo/eslint.config.js`
+- 개발 시 사용하는 패키지 매니저는 `yarn` 을 사용합니다.
+- API 개발 시, `axios` 와 `@tanstack/react-query` __v5__ 를 사용합니다.
+  - 샘플 구현 코드 확인해주세요.
+- 상태관리는 `zustand` or `jotai` or `recoil` 를 사용합니다.
+  - `redux` 사용은 지양합니다.
+- 스타일 가이드는 `scss` 권장하나 자유롭게 사용하셔도 됩니다.
 
 ## root 경로에 패키지 설치 시 해결방법
 
@@ -13,3 +21,4 @@
 ```
 yarn add <package-name> --ignore-workspace-root-check
 ```
+

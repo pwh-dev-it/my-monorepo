@@ -272,3 +272,21 @@ export function Header() {
 ```
 "dev:a": "yarn workspace website-a dev -- -p 3001",
 ```
+
+
+### 10. apps/website-a/.env 환경 변수 파일 추가
+```
+touch .env
+```
+
+```env
+민감정보는 .env 등록하지 말고 gitlab-ci.yml 에서 환경변수로 등록 필요
+
+# NEXT_PUBLIC_ 접두어를 붙여야 클라이언트(브라우저) 에서 접근 가능
+
+# 직접 Mock API를 사용하려면 아래 주석을 해제하세요.
+NEXT_PUBLIC_API_BASE_URL="http://localhost:8080"
+
+# Mock API를 사용하지 않으려면 아래 주석을 해제하세요.
+# NEXT_PUBLIC_API_BASE_URL="http://dev.hybe.website-b/api"
+```
