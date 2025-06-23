@@ -1,4 +1,4 @@
-// packages/utils/src/index.ts
+// packages/utils/src/clientApi.ts
 export function formatToCurrency(amount: number): string {
   return `$${amount.toFixed(2)}`;
 }

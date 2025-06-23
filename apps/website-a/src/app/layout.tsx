@@ -1,7 +1,9 @@
 // apps/website-a/src/app/layout.tsx
 import './globals.scss';
 
-import React from 'react';
+import { createQueryClient } from '@monorepo/api';
+import { QueryClientProvider } from '@tanstack/react-query';
+import React, { useState } from 'react';
 
 import { Header } from '../components/Header';
 
@@ -11,10 +13,19 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // queryClient 중복 생성 을 방지하기 위해 useState 사용
+  const [queryClient] = useState(() => createQueryClient());
+
   return (
     <html lang="ko">
-      <Header />
-      <body>{children}</body>
+      <body>
+        <QueryClientProvider client={queryClient}>
+          <>
+            <Header />
+            {children}
+          </>
+        </QueryClientProvider>
+      </body>
     </html>
   );
 }

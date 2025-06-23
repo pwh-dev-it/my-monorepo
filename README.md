@@ -3,69 +3,82 @@
 
 ```
 my-monorepo-yarn/
-├── apps/                         # 개별 Next.js 웹사이트
-│   ├── website-a/                # 웹사이트 A: board, board/[id]
-│   │   ├── public/               #   - A 웹사이트 고유의 정적 파일 (이미지, 폰트 등)
+├── apps/                           # 개별 Next.js 웹사이트
+│   ├── website-a/                  # 웹사이트 A: board, board/[id]
+│   │   ├── public/                 #   - A 웹사이트 고유의 정적 파일 (이미지, 폰트 등)
 │   │   ├── src/
-│   │   │   └── app/              #   - Next.js App Router의 라우팅 정의
-│   │   │       ├── layout.tsx    #     - A 웹사이트의 최상위 레이아웃
-│   │   │       ├── page.tsx      #     - A 웹사이트의 홈페이지 (http://localhost:3000/)
-│   │   │       ├── globals.scss  #     - A 웹사이트의 전역 SCSS 스타일
-│   │   │       ├── board/        #     - '/board' 경로 (게시판 목록)
+│   │   │   └── app/                #   - Next.js App Router의 라우팅 정의
+│   │   │       ├── layout.tsx      #     - A 웹사이트의 최상위 레이아웃
+│   │   │       ├── page.tsx        #     - A 웹사이트의 홈페이지 (http://localhost:3000/)
+│   │   │       ├── globals.scss    #     - A 웹사이트의 전역 SCSS 스타일
+│   │   │       ├── board/          #     - '/board' 경로 (게시판 목록)
 │   │   │       │   ├── page.tsx
-│   │   │       │   └── [id]/     #     - '/board/{id}' 동적 경로 (게시글 상세)
+│   │   │       │   └── [id]/       #     - '/board/{id}' 동적 경로 (게시글 상세)
 │   │   │       │       └── page.tsx
-│   │   │       └── components/   #   - A 웹사이트 고유의 재사용 컴포넌트 (디자인 A)
+│   │   │       └── components/     #   - A 웹사이트 고유의 재사용 컴포넌트 (디자인 A)
 │   │   │           └── Header.tsx
 │   │   │           └── BoardList.tsx
-│   │   ├── next.config.ts       #   - A 웹사이트의 Next.js 설정
-│   │   ├── package.json          #   - A 웹사이트의 의존성 (공통 패키지 참조)
-│   │   └── tsconfig.json         #   - A 웹사이트의 TypeScript 설정
+│   │   ├── next.config.ts          #   - A 웹사이트의 Next.js 설정
+│   │   ├── package.json            #   - A 웹사이트의 의존성 (공통 패키지 참조)
+│   │   └── tsconfig.json           #   - A 웹사이트의 TypeScript 설정
 │   │
-│   ├── website-b/                # 웹사이트 B: user, user/[id]
+│   ├── website-b/                  # 웹사이트 B: user, user/[id]
 │   │   ├── public/
 │   │   ├── src/
 │   │   │   └── app/
 │   │   │       ├── layout.tsx
-│   │   │       ├── page.tsx      #     - B 웹사이트의 홈페이지 (http://localhost:3001/)
-│   │   │       ├── globals.scss  #     - B 웹사이트의 전역 SCSS 스타일
-│   │   │       ├── user/         #     - '/user' 경로 (사용자 목록)
+│   │   │       ├── page.tsx        #     - B 웹사이트의 홈페이지 (http://localhost:3001/)
+│   │   │       ├── globals.scss    #     - B 웹사이트의 전역 SCSS 스타일
+│   │   │       ├── user/           #     - '/user' 경로 (사용자 목록)
 │   │   │       │   ├── page.tsx
-│   │   │       │   └── [id]/     #     - '/user/{id}' 동적 경로 (사용자 상세)
+│   │   │       │   └── [id]/       #     - '/user/{id}' 동적 경로 (사용자 상세)
 │   │   │       │       └── page.tsx
-│   │   │       └── components/   #   - B 웹사이트 고유의 재사용 컴포넌트 (디자인 B)
+│   │   │       └── components/     #   - B 웹사이트 고유의 재사용 컴포넌트 (디자인 B)
 │   │   │           └── Navbar.tsx
 │   │   │           └── UserCard.tsx
 │   │   ├── next.config.ts
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   └── website-c/                # 웹사이트 C: info
+│   └── website-c/                  # 웹사이트 C: info
 │       ├── public/
 │       ├── src/
 │       │   └── app/
 │       │       ├── layout.tsx
-│       │       ├── page.tsx      #     - C 웹사이트의 홈페이지 (http://localhost:3002/)
-│       │       ├── globals.scss  #     - C 웹사이트의 전역 SCSS 스타일
-│       │       └── info/         #     - '/info' 경로 (정보 페이지)
+│       │       ├── page.tsx        #     - C 웹사이트의 홈페이지 (http://localhost:3002/)
+│       │       ├── globals.scss    #     - C 웹사이트의 전역 SCSS 스타일
+│       │       └── info/           #     - '/info' 경로 (정보 페이지)
 │       │           └── page.tsx
-│       │       └── components/   #   - C 웹사이트 고유의 재사용 컴포넌트 (디자인 C)
+│       │       └── components/     #   - C 웹사이트 고유의 재사용 컴포넌트 (디자인 C)
 │       │           └── InfoBox.tsx
 │       ├── next.config.ts
 │       ├── package.json
 │       └── tsconfig.json
 │
-├── packages/                     # 공통 코드 및 라이브러리
-│   ├── api/                      # 공통 API 클라이언트 패키지
+├── packages/                       # 공통 코드 및 라이브러리
+│   ├── api/                        # 공통 API 클라이언트 패키지
 │   │   ├── src/
-│   │   │   └── index.ts          #   - 공통 API 호출 함수 및 타입 정의
+│   │   │   └── index.ts            #   - API 호출 함수 export 정의
+│   │   │   └── admin/              #   - [!!] admin 전용 API 정의
+│   │   │       ├── admin.api.ts
+│   │   │       └── useAdmin.ts
+│   │   │   └── customer/           #   - [!!] customer 전용 API 정의
+│   │   │       └── products/       #   - products API 예시
+│   │   │           ├── product.api.ts
+│   │   │           └── useProduct.ts
+│   │   │       └── users/          #   - users API 예시
+│   │   │           ├── user.api.ts
+│   │   │           └── useUser.ts
+│   │   │   └── client/             #   - Axios 인스턴스 생성(admin, customer)
+│   │   │       └── axiosInstance.ts
+│   │   │   └── query/              #   - @tanstack/react-query v5 쿼리 클라이언트 설정
+│   │   │       └── queryClient.ts
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   ├── utils/                    # 범용 공통 유틸리티 패키지 (UI와 무관)
+│   ├── utils/                    # 범용 공통 유틸리티성 패키지 (UI와 무관)
 │   │   ├── src/
-│   │   │   └── date-fns.ts
-│   │   │   └── validators.ts
+│   │   │   └── index.ts
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
@@ -273,8 +286,39 @@ export function Header() {
 "dev:a": "yarn workspace website-a dev -- -p 3001",
 ```
 
+### 10. QueryClientProvider 추가 (공통 API 클라이언트 설정, 필수)
+- website-a/tsconfig.json 파일 수정
+```json5
+{
+  // ... 기존 설정,
+  "compilerOptions": {
+    "paths": {
+      // ... 기존 설정,
+      "@tanstack/react-query": ["node_modules/@tanstack/react-query"],
+    }
+  }
+}
+```
+- website-a/src/app/layout.tsx 파일에 QueryClientProvider 추가
+```typescript jsx
+import { QueryClientProvider } from '@tanstack/react-query'; // import 추가
 
-### 10. apps/website-a/.env 환경 변수 파일 추가
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // queryClient 중복 생성 을 방지하기 위해 useState 사용
+  const [queryClient] = useState(() => createQueryClient());
+
+  return (
+    <html lang="ko">
+      <body>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      </body>
+    </html>
+  );
+}
+
+```
+
+### 11. apps/website-a/.env 환경 변수 파일 추가
 ```
 touch .env
 ```

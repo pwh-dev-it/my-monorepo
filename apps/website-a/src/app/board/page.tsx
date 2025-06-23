@@ -1,10 +1,10 @@
 // apps/website-a/src/app/board/page.tsx
-import { fetchUsers } from '@monorepo/api'; // 공통 API 사용 예시
+import { useUser } from '@monorepo/api';
 import { capitalizeFirstLetter } from '@monorepo/utils'; // 공통 유틸리티 사용 예시
 import Link from 'next/link';
 
 export default async function BoardListPage() {
-  const { data: users, error } = await fetchUsers();
+  const { data: users = [], error } = useUser({ props: { id: '1' } });
   const mockPosts =
     users?.map((user) => ({
       id: user.id,
@@ -15,7 +15,7 @@ export default async function BoardListPage() {
   return (
     <div style={{ padding: '20px', backgroundColor: '#e8f5e9' }}>
       <h1>웹사이트 A - 게시판 목록</h1>
-      {error && <p style={{ color: 'red' }}>데이터 로드 오류: {error}</p>}
+      {error && <p style={{ color: 'red' }}>데이터 로드 오류: {error.message}</p>}
       <ul>
         {mockPosts.map((post) => (
           <li
