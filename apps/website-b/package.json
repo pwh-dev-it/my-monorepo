@@ -20,6 +20,7 @@
   "devDependencies": {
     "@types/node": "*",
     "@types/react": "*",
-    "@types/react-dom": "*"
+    "@types/react-dom": "*",
+    "typescript": "*"
   }
 }
