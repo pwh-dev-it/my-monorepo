@@ -286,7 +286,7 @@ export function Header() {
 "dev:a": "yarn workspace website-a dev -- -p 3001",
 ```
 
-### 10. QueryClientProvider 추가 (공통 API 클라이언트 설정, 필수)
+### 10. ClientProvider 추가 (공통 API 클라이언트 설정, 필수)
 - website-a/tsconfig.json 파일 수정
 ```json5
 {
@@ -299,18 +299,17 @@ export function Header() {
   }
 }
 ```
-- website-a/src/app/layout.tsx 파일에 QueryClientProvider 추가
+- website-a/src/components/ClientProvider.tsx 파일을 복사해서 생상 후, 아래처럼 추가
 ```typescript jsx
-import { QueryClientProvider } from '@tanstack/react-query'; // import 추가
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // queryClient 중복 생성 을 방지하기 위해 useState 사용
-  const [queryClient] = useState(() => createQueryClient());
-
   return (
     <html lang="ko">
       <body>
-        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+        <ClientProvider>
+          <Header />
+            {children}
+        </ClientProvider>
       </body>
     </html>
   );
@@ -324,13 +323,10 @@ touch .env
 ```
 
 ```env
-민감정보는 .env 등록하지 말고 gitlab-ci.yml 에서 환경변수로 등록 필요
-
 # NEXT_PUBLIC_ 접두어를 붙여야 클라이언트(브라우저) 에서 접근 가능
+# 기본값은 개발용 API 서버 주소입니다.
+NEXT_PUBLIC_API_BASE_URL="http://dev.hybe.website-b/api"
 
-# 직접 Mock API를 사용하려면 아래 주석을 해제하세요.
-NEXT_PUBLIC_API_BASE_URL="http://localhost:8080"
-
-# Mock API를 사용하지 않으려면 아래 주석을 해제하세요.
-# NEXT_PUBLIC_API_BASE_URL="http://dev.hybe.website-b/api"
+# 임의로 Mock API를 사용하고 싶다면 아래 주석을 해제하세요.
+# NEXT_PUBLIC_API_BASE_URL="http://localhost:8080"
 ```

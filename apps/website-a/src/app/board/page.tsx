@@ -1,9 +1,10 @@
+'use client';
 // apps/website-a/src/app/board/page.tsx
 import { useUser } from '@monorepo/api';
 import { capitalizeFirstLetter } from '@monorepo/utils'; // 공통 유틸리티 사용 예시
 import Link from 'next/link';
 
-export default async function BoardListPage() {
+export default function BoardListPage() {
   const { data: users = [], error } = useUser({ props: { id: '1' } });
   const mockPosts =
     users?.map((user) => ({

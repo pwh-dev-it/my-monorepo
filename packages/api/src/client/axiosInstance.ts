@@ -1,6 +1,6 @@
 // packages/api/src/axiosInstance.ts
 import axios from 'axios';
-import { isNil } from 'es-toolkit';
+import { isNil } from 'es-toolkit/predicate';
 
 /**
  * client API axios 인스텁스
@@ -8,7 +8,8 @@ import { isNil } from 'es-toolkit';
  */
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080',
-  withCredentials: true,
+  // mock 서버를 사용할 때는 localhost로 CORS 문제를 피하기 위해 withCredentials를 false 로 설정합니다.
+  withCredentials: !!process.env.NEXT_PUBLIC_API?.includes('localhost'),
 });
 
 axiosInstance.interceptors.request.use(
