@@ -18,9 +18,12 @@
     "sass": "*"
   },
   "devDependencies": {
+    "@eslint/js": "*",
+    "@next/eslint-plugin-next": "*",
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "eslint": "*",
     "typescript": "*"
   }
 }

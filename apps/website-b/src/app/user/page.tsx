@@ -1,9 +1,10 @@
+'use client';
 // apps/website-b/src/app/user/page.tsx
 import { useUser } from '@monorepo/api';
 import Link from 'next/link';
 
-export default async function UserListPage() {
-  const { data: users = [], error } = await useUser({ props: { id: '1' } });
+export default function UserListPage() {
+  const { data: users = [], error } = useUser({ props: { id: '1' } });
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#fbe9e7' }}>

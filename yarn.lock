@@ -94,7 +94,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.29.0, @eslint/js@npm:^9.29.0":
+"@eslint/js@npm:*, @eslint/js@npm:9.29.0, @eslint/js@npm:^9.29.0":
   version: 9.29.0
   resolution: "@eslint/js@npm:9.29.0"
   checksum: 10c0/d0ccf37063fa27a3fae9347cb044f84ca10b5a2fa19ffb2b3fedf3b96843ac1ff359ea9f0ab0e80f2f16fda4cb0dc61ea0fed0375090f050fe0a029e7d6de3a3
@@ -417,7 +417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^15.3.4":
+"@next/eslint-plugin-next@npm:*, @next/eslint-plugin-next@npm:^15.3.4":
   version: 15.3.4
   resolution: "@next/eslint-plugin-next@npm:15.3.4"
   dependencies:
@@ -2402,7 +2402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.29.0":
+"eslint@npm:*, eslint@npm:^9.29.0":
   version: 9.29.0
   resolution: "eslint@npm:9.29.0"
   dependencies:
@@ -5385,12 +5385,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "website-a@workspace:apps/website-a"
   dependencies:
+    "@eslint/js": "npm:*"
     "@monorepo/api": "npm:*"
     "@monorepo/utils": "npm:*"
+    "@next/eslint-plugin-next": "npm:*"
     "@tanstack/react-query": "npm:*"
     "@types/node": "npm:*"
     "@types/react": "npm:*"
     "@types/react-dom": "npm:*"
+    eslint: "npm:*"
     next: "npm:*"
     react: "npm:*"
     react-dom: "npm:*"
@@ -5403,12 +5406,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "website-b@workspace:apps/website-b"
   dependencies:
+    "@eslint/js": "npm:*"
     "@monorepo/api": "npm:*"
     "@monorepo/utils": "npm:*"
+    "@next/eslint-plugin-next": "npm:*"
     "@tanstack/react-query": "npm:*"
     "@types/node": "npm:*"
     "@types/react": "npm:*"
     "@types/react-dom": "npm:*"
+    eslint: "npm:*"
     next: "npm:*"
     react: "npm:*"
     react-dom: "npm:*"

@@ -6331,12 +6331,15 @@ const RAW_RUNTIME_STATE =
       ["workspace:apps/website-a", {\
         "packageLocation": "./apps/website-a/",\
         "packageDependencies": [\
+          ["@eslint/js", "npm:9.29.0"],\
           ["@monorepo/api", "virtual:39720db1f888aa1eac591d3d613853785ed993538d8b2867b13b0e47f0f788dac5de1ac2a37dae2fd3bda9e056cc7c891d7fca1983bb9ae5cccfb4737cdde716#workspace:packages/api"],\
           ["@monorepo/utils", "workspace:packages/utils"],\
+          ["@next/eslint-plugin-next", "npm:15.3.4"],\
           ["@tanstack/react-query", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:5.81.2"],\
           ["@types/node", "npm:24.0.3"],\
           ["@types/react", "npm:19.1.8"],\
           ["@types/react-dom", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:19.1.6"],\
+          ["eslint", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:9.29.0"],\
           ["next", "virtual:39720db1f888aa1eac591d3d613853785ed993538d8b2867b13b0e47f0f788dac5de1ac2a37dae2fd3bda9e056cc7c891d7fca1983bb9ae5cccfb4737cdde716#npm:15.3.4"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:19.1.0"],\
@@ -6351,12 +6354,15 @@ const RAW_RUNTIME_STATE =
       ["workspace:apps/website-b", {\
         "packageLocation": "./apps/website-b/",\
         "packageDependencies": [\
+          ["@eslint/js", "npm:9.29.0"],\
           ["@monorepo/api", "virtual:39720db1f888aa1eac591d3d613853785ed993538d8b2867b13b0e47f0f788dac5de1ac2a37dae2fd3bda9e056cc7c891d7fca1983bb9ae5cccfb4737cdde716#workspace:packages/api"],\
           ["@monorepo/utils", "workspace:packages/utils"],\
+          ["@next/eslint-plugin-next", "npm:15.3.4"],\
           ["@tanstack/react-query", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:5.81.2"],\
           ["@types/node", "npm:24.0.3"],\
           ["@types/react", "npm:19.1.8"],\
           ["@types/react-dom", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:19.1.6"],\
+          ["eslint", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:9.29.0"],\
           ["next", "virtual:39720db1f888aa1eac591d3d613853785ed993538d8b2867b13b0e47f0f788dac5de1ac2a37dae2fd3bda9e056cc7c891d7fca1983bb9ae5cccfb4737cdde716#npm:15.3.4"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:b8a8c408b2f8c1f793472578d68369ec85eaa06af6f48cb1f496430ec9df700b342f723e8ae8a8b520ad984a67a0715055f8efd8867e6147cdb79b4c24e05352#npm:19.1.0"],\
