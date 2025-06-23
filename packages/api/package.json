@@ -8,7 +8,19 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.80.10",
-    "axios": "^1.10.0"
+    "@tanstack/react-query": "*",
+    "@tanstack/react-query-devtools": "*",
+    "axios": "*",
+    "es-toolkit": "*"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "*",
+    "react-dom": "*"
   }
 }
