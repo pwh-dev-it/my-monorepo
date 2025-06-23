@@ -55,5 +55,6 @@
     "axios": "^1.10.0",
     "es-toolkit": "^1.39.4",
     "json-server": "^1.0.0-beta.3"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
