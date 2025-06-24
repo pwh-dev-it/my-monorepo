@@ -1,14 +1,15 @@
+'use client';
 // apps/website-b/src/app/user/page.tsx
-import { fetchUsers } from '@monorepo/api';
+import { useUser } from '@monorepo/api';
 import Link from 'next/link';
 
-export default async function UserListPage() {
-  const { data: users, error } = await fetchUsers();
+export default function UserListPage() {
+  const { data: users = [], error } = useUser({ props: { id: '1' } });
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#fbe9e7' }}>
       <h1>웹사이트 B - 사용자 목록</h1>
-      {error && <p style={{ color: 'red' }}>데이터 로드 오류: {error}</p>}
+      {error && <p style={{ color: 'red' }}>데이터 로드 오류: {error.message}</p>}
       <ul>
         {users?.map((user) => (
           <li

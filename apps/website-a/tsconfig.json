@@ -20,9 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@tanstack/react-query": ["node_modules/@tanstack/react-query"],
-      "es-toolkit": ["node_modules/es-toolkit"]
+      "@/*": ["./src/*"]
     },
     "target": "ES2017"
   },
