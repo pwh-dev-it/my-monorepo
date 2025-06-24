@@ -43,6 +43,7 @@ const axiosAdminInstance = axios.create({
 axiosAdminInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('access_admin_token'); // 또는 쿠키 등
+
     if (!isNil(token)) {
       config.headers.Authorization = `Bearer ${token}`;
     }

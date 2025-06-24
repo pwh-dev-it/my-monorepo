@@ -12,7 +12,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build:common": "yarn cache clean && yarn install && yarn workspaces foreach --all --topological run build",
+    "build:clean": "yarn cache clean && yarn install",
+    "build:setting": "yarn dlx @yarnpkg/sdks vscode",
+    "build:common": "yarn install && yarn workspaces foreach --all --topological run build",
     "mock": "yarn workspace @monorepo/mock-api start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,json}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,json}\"",

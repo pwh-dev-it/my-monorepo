@@ -3,6 +3,8 @@ import './globals.scss';
 
 import React from 'react';
 
+import { ClientProvider } from '../components/ClientProvider';
+
 export const metadata = {
   title: '웹사이트 B - 사용자',
   description: '웹사이트 B의 사용자 프로필 기능',
@@ -11,7 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <ClientProvider>{children}</ClientProvider>
+      </body>
     </html>
   );
 }
